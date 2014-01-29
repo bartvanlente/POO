@@ -4,6 +4,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $this->template->load('templates/default', 'index');
+        $this->template->setTemplate('templates/default');
+        
+        $this->template->setView('index');
     }
 }
