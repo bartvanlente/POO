@@ -3,9 +3,7 @@
     </head>
     <body>
         <div id="wrapper">
-<?php
-
-?>
+<?php echo $contents; ?>
         </div>
     </body>
 </html>

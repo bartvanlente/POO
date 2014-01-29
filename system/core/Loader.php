@@ -197,7 +197,7 @@ class CI_Loader {
 		{
 			foreach ($library as $class)
 			{
-				$this->library($class, $params);
+                            $this->library($class, $params);
 			}
 
 			return;
@@ -904,9 +904,12 @@ class CI_Loader {
 			if (file_exists($subclass))
 			{
 				$baseclass = BASEPATH.'libraries/'.ucfirst($class).'.php';
-
+                                
+                                print_r( $baseclass );
+                                
 				if ( ! file_exists($baseclass))
 				{
+//                                    echo $subclass;
 					log_message('error', "Unable to load the requested class: ".$class);
 					show_error("Unable to load the requested class: ".$class);
 				}
