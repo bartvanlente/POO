@@ -3,8 +3,8 @@
 class Template
 {
     protected $data = array();
-    protected $template;
-    protected $view;
+    public $template;
+    public $view;
 
     private $_rendered;
     
@@ -15,30 +15,29 @@ class Template
 
     public function setView( $file )
     {
-        $this->view = get_instance()->load->view( $file, true );
+        $this->view = $file;
         
-        return get_instance()->load->view( $file, $this->data, true );
+        return $this->view;
     }
     
     
     public function setTemplate( $file )
     {
-        $this->template = get_instance()->load->view( $file, false );
+        $this->template = $file;
         
         return get_instance()->load->view( $file, $this->data, false );        
     }
      
     public function renderFile( $file )
     {       
-        if( ! file_exists( $file) ) return false;
-        
         ob_start();
 
-            include( $file );
+            include( '/application/views/' . $file . '.php' );
+            
             $content = ob_get_contents();
 
         ob_end_clean();
-
+        
         return $content;
     }
     
@@ -49,7 +48,7 @@ class Template
     
     public function __destruct()
     {       
-        echo $this->_rendered;
+        return $this->_rendered;
     }
 }
 

@@ -40,8 +40,6 @@
 
 $route['default_controller'] = "IndexController";
 
-$route['test'] = "IndexController/test";
-
 $route['404_override'] = '';
 
 
