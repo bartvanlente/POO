@@ -15,8 +15,8 @@
                 <div id="filter">
                     <div class="title">Filteren</div>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>test</li>
+                        <li>test1</li>
+                        <li>test2</li>
                     </ul>
                 </div>
