@@ -87,7 +87,7 @@ class CI_Router {
 	{
 		$this->config =& load_class('Config', 'core');
 		$this->uri =& load_class('URI', 'core');
-		log_message('debug', "Router Class Initialized");
+		log_message('debug', "Router Class Initialized
 	}
 	// --------------------------------------------------------------------
 
@@ -136,6 +136,7 @@ class CI_Router {
 		{
 			include(APPPATH.'config/routes.php');
 		}
+		print_r( $this->routes ); exit;
 		$this->routes = ( ! isset($route) OR ! is_array($route)) ? array() : $route;
 		unset($route);
 

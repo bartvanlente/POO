@@ -38,10 +38,11 @@
 |
 */
 
-$route['default_controller'] = "IndexController";
+$route['default_controller'] = 'indexcontroller';
 
 $route['404_override'] = '';
 
+$route['translate_uri_dashes'] = FALSE;
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

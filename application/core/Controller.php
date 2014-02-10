@@ -6,7 +6,7 @@ class Controller extends CI_Controller
     {
         parent::__construct();
         
-        $this->load->library('template');
+        $this->load->library('Template');
         $this->load->helper('html');
     }
     

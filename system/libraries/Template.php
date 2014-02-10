@@ -32,7 +32,7 @@ class Template
     {       
         ob_start();
 
-            include( '/application/views/' . $file . '.php' );
+            include( APPPATH . 'views/' . $file . '.php' );
             
             $content = ob_get_contents();
 
