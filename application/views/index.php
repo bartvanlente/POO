@@ -20,3 +20,13 @@
                         <li>test2</li>
                     </ul>
                 </div>
+
+<?php
+
+    print_r($this->data['users']);
+    foreach($this->data['users'] as $row) 
+    {
+        echo $row->firstname;
+    }
+    
+?>
