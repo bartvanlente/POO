@@ -34,6 +34,44 @@
 #navigation .right li a:hover { color:#f06b48; }
 
 
+/* Login
+------------------------------------------------------------------------------- */
+
+ul#login { position:absolute; display:none; width:230px; height:100px; top:80px; right:195px; 
+           z-index:2; border-radius:5px; border:1px solid #e1e1e1;
+           background: -webkit-linear-gradient(#dbdbdb, #ebebeb); /* For Safari */
+           background: -o-linear-gradient(#dbdbdb, #ebebeb); /* For Opera 11.1 to 12.0 */
+           background: -moz-linear-gradient(#dbdbdb, #ebebeb); /* For Firefox 3.6 to 15 */
+           background: linear-gradient(#dbdbdb, #ebebeb); /* Standard syntax */ 
+           box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+           padding:10px; }
+
+ul#login li { padding:0px !important; }
+
+ul#login li label { float:left; width:90px; font-size:13px; font-weight:700;
+                    line-height:23px; }
+
+ul#login li input[type="text"], ul#login li input[type="password"] { 
+    width:138px; font-family: inherit; border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75); }
+
+ul#login li input[type="submit"] { 
+    border:1px solid #a47025; color:#fff;
+    border-radius:3px; padding:5px; width:75px; 
+    height:32px; font-size:14px; margin:9px 0px 0px 90px;
+    text-shadow: rgba(0, 0, 0, 0.35) 0 1px 0;
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+    background: -webkit-linear-gradient(#f78e72, #f06b48); /* For Safari */
+    background: -o-linear-gradient(#f78e72, #f06b48); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f78e72, #f06b48); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f78e72, #f06b48); /* Standard syntax */
+}
+
+ul#login li input[type="submit"]:hover { cursor:pointer; }
+
+
 /* Images
 ------------------------------------------------------------------------------- */
 
@@ -47,22 +85,30 @@ ul#images li p { float:right; width:300px; text-align:right; font-size:12px; col
 
 ul#images li img { width:100%; height:400px; background-color:#d9d9d9; border:none; }
 
-ul#images li .like { float:left; background:url('../_img/icons/like.png') #d9d9d9; width:35px; height:35px; }
+ul#images li .like { float:left; background:url('../_img/icons/like.png') #d9d9d9; 
+                     width:35px; height:35px; }
 
-ul#images li .dislike { float:left; margin-left:15px; background:url('../_img/icons/dislike.png') #d9d9d9; width:35px; height:35px; }
+ul#images li .dislike { float:left; margin-left:15px; 
+                        background:url('../_img/icons/dislike.png') #d9d9d9; 
+                        width:35px; height:35px; }
 
 
 /* Filter
 ------------------------------------------------------------------------------- */
 
-#filter { float:left; width:261px; height:350px; margin:23px 0px 0px 40px; background-color:#d9d9d9; }
+#filter { float:left; width:261px; height:350px; margin:23px 0px 0px 40px; 
+          background-color:#d9d9d9; }
 
-#filter .title { float:left; margin:10px 0px 0px 10px; padding-top:10px; width:265px; height:30px; background-color:#f06b48; text-align:center; font-size:20px; color:#ededed; }
+#filter .title { float:left; margin:10px 0px 0px 10px; padding-top:10px; 
+                 width:265px; height:30px; background-color:#f06b48; 
+                 text-align:center; font-size:20px; color:#ededed; }
+
 
 /* Footer
 ------------------------------------------------------------------------------- */
 
-#footer { position:relative; margin-top:-80px; height:80px; clear:both; background-color:#f06b48; }  
+#footer { position:relative; margin-top:-80px; height:80px; clear:both; 
+          background-color:#f06b48; }  
 
 #footer ul { width:960px; margin:0 auto; display:block; }
 
