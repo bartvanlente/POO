@@ -4,7 +4,12 @@ var $navigation = {
 
         $( '.login' ).click(function() {
             $( '#login' ).toggle();
+            $( '#login' ).find( 'input[type="text"]' ).focus();
         });
+        
+        $( '#login' ).on('mouseleave',function() {
+            $( '#login ').hide();
+	});
     }
 
 }

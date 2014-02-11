@@ -3,9 +3,12 @@
     <head>
         <link rel="stylesheet" href="public/_css/reset.css">
         <link rel="stylesheet" href="public/_css/default.css">
+        
         <link href='http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:400,700,600' rel='stylesheet' type='text/css' />
+        
         <script src="public/_js/jquery.min.js" type="text/javascript"></script>
         <script src="public/_js/custom.js" type="text/javascript"></script>
+        
     </head>
     <body>
         <div id="wrapper">
@@ -18,9 +21,7 @@
                     <li><a href="#">Users</a></li>
                 </ul>
                 <ul class="right">
-                    <li class="login">
-                        <a href="#">Login</a>
-                    </li>
+                    <li class="login"><a href="#">Login</a></li>
                     <li><a href="#">Signup</a></li>
                 </ul>
                 <form id="login" method="post" action="login">
