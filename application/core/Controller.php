@@ -8,7 +8,7 @@ class Controller extends CI_Controller
         
         $this->load->library('Template');
         $this->load->helper('html');
-        $this->load->model('usersmodel','',TRUE);
+        $this->load->model( array('usersmodel', 'loginmodel'),'',TRUE );
     }
     
 }

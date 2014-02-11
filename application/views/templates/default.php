@@ -23,13 +23,13 @@
                     </li>
                     <li><a href="#">Signup</a></li>
                 </ul>
-                <ul id="login">
-                    <form method="post" action="">
+                <form id="login" method="post" action="login">
+                    <ul>
                         <li><label for="username">Username</label><input type="text"></li>
                         <li><label for="passoword">Password</label><input type="password"></li>
                         <li><input type="submit" value="Login"></li>
-                    </form>
-                </ul>
+                    </ul>
+                </form>
             </div>
             <div id="content">
 <?php

@@ -38,6 +38,8 @@
 |
 */
 
+$route['login'] = 'logincontroller';
+
 $route['default_controller'] = 'indexcontroller';
 
 $route['404_override'] = '';
