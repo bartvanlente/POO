@@ -1,16 +1,18 @@
                 <ul id="images">
-                    <li>
-                        <h2>Title</h2><p>0 Comments 0 Points</p>
-                        <img src="http://lorempixel.com/600/400">
-                        <div class="like"></div>
-                        <div class="dislike"></div>
-                    </li>
-                    <li>
-                        <h2>Title</h2><p>0 Comments 0 Points</p>
-                        <img src="http://lorempixel.com/600/400">
-                        <div class="like"></div>
-                        <div class="dislike"></div>
-                    </li>
+<?php
+
+foreach( $this->data['images'] as $image )
+{
+    echo '                    <li>'. "\n";
+    echo '                        <h2>'. $image->title .'</h2><p>0 Comments 0 Points</p>'. "\n";
+    echo '                        <a href="images/'. $image->url .'">'. "\n";
+    echo '                            <img src="'. $image->path .'" alt="'. $image->title .'" >'. "\n";
+    echo '                        </a>'. "\n";
+    echo '                        <div class="like"></div>'. "\n";
+    echo '                        <div class="dislike"></div>'. "\n";
+    echo '                    </li>'. "\n";
+}
+?>
                 </ul>
                 <div id="filter">
                     <div class="title">Filteren</div>

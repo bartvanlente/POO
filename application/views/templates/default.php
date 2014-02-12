@@ -20,14 +20,26 @@
                     <li><a href="#">Categories</a></li>
                     <li><a href="#">Users</a></li>
                 </ul>
-                <ul class="right">
-                    <li class="login"><a href="#">Login</a></li>
-                    <li><a href="#">Signup</a></li>
-                </ul>
-                <form id="login" method="post" action="login">
+<?php
+if( loginmodel::is_logged_in() )
+{
+    echo '                <ul class="right">'. "\n";
+    echo '                    <li><a href="settings">Settings</a></li>'. "\n";
+    echo '                    <li><a href="logout">Logout</a></li>'. "\n";
+    echo '                </ul>'. "\n";
+}
+else 
+{
+    echo '                <ul class="right">'. "\n";
+    echo '                    <li class="login"><a href="#">Login</a></li>'. "\n";
+    echo '                    <li><a href="#">Signup</a></li>'. "\n";
+    echo '                </ul>'. "\n";
+}
+?>
+                <form id="login" method="post" action="login" accept-charset=“utf-8” enctype="multipart/form-data" >
                     <ul>
-                        <li><label for="username">Username</label><input type="text"></li>
-                        <li><label for="passoword">Password</label><input type="password"></li>
+                        <li><label for="username">Username</label><input type="text" name="username"></li>
+                        <li><label for="passoword">Password</label><input type="password" name="password"></li>
                         <li><input type="submit" value="Login"></li>
                     </ul>
                 </form>

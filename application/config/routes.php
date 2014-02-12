@@ -38,7 +38,11 @@
 |
 */
 
-$route['login'] = 'logincontroller';
+$route['login'] = 'logincontroller/login';
+
+$route['logout'] = 'logincontroller/logout';
+
+$route['register'] = 'logincontroller/register';
 
 $route['default_controller'] = 'indexcontroller';
 
