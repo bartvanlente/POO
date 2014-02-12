@@ -129,12 +129,20 @@ ul#images li .dislike { float:left; margin-left:15px;
 
 #timeline { float:left; width:640px; height:auto; overflow:hidden; }
 
-#timeline a { float:left; width:15px; height:25px; font-size:20px; font-weight:700; 
-              padding:9px 14px; background:url('../_img/icons/timeline.png'); color:#9d9191; }
+#timeline li { float:left; width:100%; margin:0!important; margin-top:6px!important; list-style:none!important; }
 
-#timeline .timeline-bar { float:left; background:url('../_img/icons/timeline-bullet.png'); width:7px; margin-bottom:-99999px; padding-bottom:99999px; }
+#timeline li.first { margin:0px!important; }
 
-#timeline .timeline-content { float:left; width:600px; height:auto; padding-bottom:99999px; margin-bottom:-99999px; }
+#timeline li a { float:left; width:15px; height:25px; font-size:20px; font-weight:700; 
+                 padding:9px 14px; background:url('../_img/icons/timeline.png'); color:#9d9191; }
+
+#timeline li .timeline-bar { float:left; background:url(); width:7px; height:auto; min-height:195px; margin-left:-25px; margin-top:44px; }
+
+#timeline li .users_overview { float:left; width:590px; height:auto; min-height:200px; 
+background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px; margin-left:18px;
+
+
+}
 
 /* Filter users
 ------------------------------------------------------------------------------- */
