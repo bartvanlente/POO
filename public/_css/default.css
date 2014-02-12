@@ -19,7 +19,7 @@
 
 #navigation .left li.first { padding-left:20px; }
 
-#navigation .left li a { float:left; color:#000; font-size:21px; }
+#navigation .left li a { float:left; color:#000; font-size:21px; text-transform:capitalize; }
 
 #navigation .left li a.active { color:#f06b48; }
 
@@ -121,6 +121,49 @@ ul#images li .dislike { float:left; margin-left:15px;
     background:url('../_img/icons/checkbox.png') 0px 0px no-repeat; }
 
 #filter input[type="checkbox"]:checked + label span { 
+    background:#ff7600 url('../_img/icons/checkbox.png') 0px -17px no-repeat; }
+
+
+/* Timeline
+------------------------------------------------------------------------------- */
+
+#timeline { float:left; width:640px; height:auto; overflow:hidden; }
+
+#timeline a { float:left; width:15px; height:25px; font-size:20px; font-weight:700; 
+              padding:9px 14px; background:url('../_img/icons/timeline.png'); color:#9d9191; }
+
+#timeline .timeline-bar { float:left; background:url('../_img/icons/timeline-bullet.png'); width:7px; margin-bottom:-99999px; padding-bottom:99999px; }
+
+#timeline .timeline-content { float:left; width:600px; height:auto; padding-bottom:99999px; margin-bottom:-99999px; }
+
+/* Filter users
+------------------------------------------------------------------------------- */
+
+#filter_users { float:left; position:relative; width:261px; height:350px; 
+          margin:23px 0px 0px 40px; background-color:#d9d9d9; }
+
+#filter_users:after { content:""; position:absolute; 
+                background:url('../_img/icons/ribbon-shadow.png'); top:50px;
+                width:14px; height:14px; left:261px; }
+
+#filter_users .title { float:left; margin:10px 0px 0px 10px; padding-top:10px; 
+                 width:265px; height:30px; background-color:#f06b48; 
+                 text-align:center; font-size:20px; color:#ededed; }
+
+#filter_users ul { float:left; width:100%; height:300px; }
+
+#filter_users ul li { float:left; width:14%; margin:10px 0px 0px 50px; list-style: none; }
+
+#filter_users ul li label { font-size:13px; font-weight:700; }
+
+#filter_users input[type="checkbox"] { display:none; }
+
+#filter_users input[type="checkbox"] + label span { margin:-2px 9px 0px -20px; 
+    display:inline-block; width:17px; height:17px; 
+    vertical-align:middle; cursor:pointer;  
+    background:url('../_img/icons/checkbox.png') 0px 0px no-repeat; }
+
+#filter_users input[type="checkbox"]:checked + label span { 
     background:#ff7600 url('../_img/icons/checkbox.png') 0px -17px no-repeat; }
 
 

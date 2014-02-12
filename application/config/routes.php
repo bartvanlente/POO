@@ -44,6 +44,10 @@ $route['logout'] = 'logincontroller/logout';
 
 $route['register'] = 'logincontroller/register';
 
+$route['users'] = 'userscontroller';
+
+$route['home'] = 'indexcontroller';
+
 $route['default_controller'] = 'indexcontroller';
 
 $route['404_override'] = '';

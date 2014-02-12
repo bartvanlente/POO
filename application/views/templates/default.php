@@ -14,11 +14,13 @@
         <div id="wrapper">
             <div id="navigation">
                 <ul class="left">
-                    <li class="first"><a class="active" href="#">Home</a></li>
-                    <li><a href="#">Hot</a></li>
-                    <li><a href="#">Newest</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Users</a></li>
+<?php
+$items = array('home', 'hot', 'newest', 'categories', 'users');
+foreach( $items as $i => $item )
+{
+    echo '                    <li '. ( $i == 0 ? 'class="first"' : '' ) .'><a'. ( $this->uri->segment(1) == $item ? ' class="active"' : '' ) .' href="'. $item .'">'. $item .'</a></li>'. "\n";
+}
+?>
                 </ul>
 <?php
 if( loginmodel::is_logged_in() )
