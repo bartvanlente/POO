@@ -3,10 +3,36 @@
 $characters = array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                      'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
-foreach( $characters as $character )
+$users = $this->data['users'];
+
+$first_chars = array();
+
+foreach($users as $user) 
 {
+    if(!isset($first_chars[strtolower(substr($user->username, 0, 1))])) {
+        $first_chars[strtolower(substr($user->username, 0, 1))] = array();
+        $first_chars[strtolower(substr($user->username, 0, 1))]['users'] = array();
+    }
+    
+    array_push($first_chars[strtolower(substr($user->username, 0, 1))]['users'], $user->username);
     
 }
+print_r($first_chars);
+
+foreach($first_chars as $key => $value) {
+    echo "<li>";
+    echo "<a>" . $key . "</a>";
+    echo "<div class='users_overview'>";
+
+        foreach($value as $user) {
+            foreach($user as $username) {
+                echo $username . "<br />";
+            }
+        }
+    echo "</div>";
+    echo "</li>";
+}
+
 
 //foreach( $this->data['users'] as $i => $user )
 //{
