@@ -2,8 +2,12 @@
 
 class logincontroller extends Controller
 {
-    public function login()
+    public function index()
     {
+        $this->template->setView('login');
+        
+        $this->template->setTemplate('templates/default');
+        
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
         
@@ -14,13 +18,14 @@ class logincontroller extends Controller
             if( $user )
             {
                 $this->session->set_userdata( 'user', $user );
-                redirect('');
+                redirect('home');
             }
             else
             {
-                echo 'not';
+                return false;
+                redirect('login');
             }
-        }
+        }        
     }
     
     public function logout()
@@ -30,7 +35,7 @@ class logincontroller extends Controller
     
     public function register()
     {
-        echo 3;
+        
     }
     
     public function forgot_password()
