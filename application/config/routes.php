@@ -38,19 +38,22 @@
 |
 */
 
-$route['login'] = 'logincontroller/login';
-
-$route['logout'] = 'logincontroller/logout';
-
-$route['register'] = 'logincontroller/register';
-
-$route['users'] = 'userscontroller';
-
-$route['home'] = 'indexcontroller';
-
 $route['default_controller'] = 'indexcontroller';
 
-$route['404_override'] = '';
+$url    = explode( '/', str_replace( '-','', $_SERVER["REQUEST_URI"] ) );
+$url    = array_slice( $url , 2);
+
+if( file_exists( APPPATH . '/controllers/' . $url[0] . 'controller' . '.php' ) )
+{
+    $route[ $url[0]] = $url[0] .'controller';
+    $route[ $url[0] .'/(:any)'] = $url[0] .'controller/$1';
+}
+else
+{
+    $route['(:any)'] = 'indexcontroller/$1';
+}
+
+//$route['404_override'] = 'indexcontroller';
 
 $route['translate_uri_dashes'] = FALSE;
 

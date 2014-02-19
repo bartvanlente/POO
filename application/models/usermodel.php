@@ -28,8 +28,27 @@ class usermodel extends CI_Model
     
     public static function GetUsers() 
     {
-        $query = get_instance()->db->query("SELECT * FROM `users`");
+        $query = get_instance()->db->query("SELECT * FROM `users` ORDER BY `username`");
         
         return $query->result();
+    }
+    
+    public static function GetUsersFilter()
+    {
+        $first_chars = array();
+        
+        foreach( self::GetUsers() as $user) 
+        {
+            $first_character = strtolower( substr( $user->username, 0, 1 ) );
+            if( ! isset( $first_chars[ $first_character ] ) ) 
+            {
+                $first_chars[ $first_character ] = array();
+                $first_chars[ $first_character ]['users'] = array();
+            }
+            
+            array_push($first_chars[ $first_character ]['users'], $user->username);
+        }
+        
+        return $first_chars;
     }
 }

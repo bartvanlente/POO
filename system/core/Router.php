@@ -368,7 +368,7 @@ class CI_Router {
 		{
 			return $this->_set_request(explode('/', $this->routes[$uri]));
 		}
-
+                
 		// Loop through the route array looking for wild-cards
 		foreach ($this->routes as $key => $val)
 		{

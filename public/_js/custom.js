@@ -2,20 +2,26 @@ var $navigation = {
 
     init : function() {
 
-        $( '.login' ).click(function() {
-            $( '#login' ).toggle();
-            $( '#login' ).find( 'input[type="text"]' ).focus();
-        });
-        
-        $( '#login' ).on('mouseleave',function() {
-            $( '#login ').hide();
-	});
     }
 
+}
+
+var $users = {
+    
+    init : function() {
+        
+        $('#timeline > li > a').click(function() {
+            $( this ).next().toggle();
+        });
+        
+    }
+    
 }
 
 $(document).ready(function() {
 
     $navigation.init();
+    
+    $users.init();
 
 });

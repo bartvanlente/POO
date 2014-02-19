@@ -1,7 +1,7 @@
                 <ul id="images">
 <?php
 
-foreach( $this->data['images'] as $image )
+foreach( $this->data['images'] as $i => $image )
 {
     echo '                    <li>'. "\n";
     echo '                        <h2>'. $image->title .'</h2><p>0 Comments 0 Points</p>'. "\n";
@@ -10,7 +10,7 @@ foreach( $this->data['images'] as $image )
     echo '                        </a>'. "\n";
     echo '                        <div class="like"></div>'. "\n";
     echo '                        <div class="dislike"></div>'. "\n";
-    echo '                    </li>'. "\n";
+    echo '                    </li>'. "\n";    
 }
 ?>
                 </ul>

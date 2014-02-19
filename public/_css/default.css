@@ -29,7 +29,9 @@
 
 #navigation .right li { float:left; padding-right:35px; }
 
-#navigation .right li a { float:left; color:#000; font-size:21px; }
+#navigation .right li a { float:left; color:#000; font-size:21px; text-transform:capitalize; }
+
+#navigation .right li a.active { color:#f06b48; }
 
 #navigation .right li a:hover { color:#f06b48; }
 
@@ -37,39 +39,94 @@
 /* Login
 ------------------------------------------------------------------------------- */
 
-#login { position:relative; top:50px; margin-left:706px; display:none; 
-         width:230px; height:100px; z-index:2; border-radius:5px; 
-         border:1px solid #e1e1e1; padding:10px;
-         background: -webkit-linear-gradient(#dbdbdb, #ebebeb); /* For Safari */
-         background: -o-linear-gradient(#dbdbdb, #ebebeb); /* For Opera 11.1 to 12.0 */
-         background: -moz-linear-gradient(#dbdbdb, #ebebeb); /* For Firefox 3.6 to 15 */
-         background: linear-gradient(#dbdbdb, #ebebeb); /* Standard syntax */ 
-         box-shadow: 2px 2px 3px rgba(0,0,0,0.2); }
+#login { display:table; width:350px; height:auto; margin:0 auto; border-radius:3px; 
+         box-shadow:0px 0px 7px 0px rgba(50, 50, 50, 0.3); }
 
-#login ul li { padding:0px !important; }
+#login ul { float:left; width:100%; padding:45px; }
 
-#login ul li label { float:left; width:90px; font-size:13px; font-weight:700;
-                    line-height:23px; }
+#login ul li { float:left; width:100%; list-style:none; margin-bottom:5px; }
+
+#login ul li span { float:left; padding:8px 12px; line-height:1; 
+                    border:1px solid #e5e5e8; border-radius:3px; }
+
+#login ul li span.user { width:10px; height:12px; 
+         background:url('../_img/icons/icon_961.png') no-repeat center center; }
+
+#login ul li span.pass { width:10px; height:12px; 
+         background:url('../_img/icons/icon_10571.png') no-repeat 43% center; }
 
 #login ul li input[type="text"], #login ul li input[type="password"] { 
-    width:138px; font-family: inherit; border: 1px solid #cccccc;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.75); margin-bottom:3px; }
+    float:left; margin-left:-3px; margin-top:0px; height:12px; padding:8px 12px; 
+    border:1px solid #e5e5e8; border-radius:0px 3px 3px 0px;  }
 
-#login ul li input[type="submit"] { 
-    border:1px solid #a47025; color:#fff;
-    border-radius:3px; padding:5px; width:75px; 
-    height:32px; font-size:14px; margin:9px 0px 0px 90px;
-    text-shadow: rgba(0, 0, 0, 0.35) 0 1px 0;
-    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
-    background: -webkit-linear-gradient(#f78e72, #f06b48); /* For Safari */
-    background: -o-linear-gradient(#f78e72, #f06b48); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#f78e72, #f06b48); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#f78e72, #f06b48); /* Standard syntax */
-}
+#login ul li input[type="text"]:focus, #login ul li input[type="password"]:focus { 
+    border-color:#f06b48;outline:0; 
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6) }
+
+#login ul li a { color:#b0b0b0; }
 
 #login ul li input[type="submit"]:hover { cursor:pointer; }
+
+#login ul li input[type="submit"] { float:left;
+    border:1px solid #a47025; color:#fff;
+    border-radius:3px; padding:5px; width:75px; 
+    height:32px; font-size:14px; margin-left:134px;
+    text-shadow: rgba(0, 0, 0, 0.35) 0 1px 0;
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+    background: -webkit-linear-gradient(#f78e72, #f06b48);
+    background: -o-linear-gradient(#f78e72, #f06b48);  
+    background: -moz-linear-gradient(#f78e72, #f06b48);   
+    background: linear-gradient(#f78e72, #f06b48);  
+}
+
+
+/* Register
+------------------------------------------------------------------------------- */
+
+#register { display:table; width:350px; height:auto; margin:0 auto; border-radius:3px; 
+         box-shadow:0px 0px 7px 0px rgba(50, 50, 50, 0.3); }
+
+#register ul { float:left; width:100%; padding:45px; }
+
+#register ul li { float:left; width:100%; list-style:none; margin-bottom:5px; }
+
+#register ul li span { float:left; padding:8px 12px; line-height:1; 
+                    border:1px solid #e5e5e8; border-radius:3px; }
+
+#register ul li span.user { width:10px; height:12px; 
+         background:url('../_img/icons/icon_961.png') no-repeat center center; }
+
+#register ul li span.pass { width:10px; height:12px; 
+         background:url('../_img/icons/icon_10571.png') no-repeat 43% center; }
+
+#register ul li span.email { width:10px; height:12px; 
+         background:url('../_img/icons/icon_2404.png') no-repeat 43% center; }
+
+#register ul li input[type="text"], #register ul li input[type="password"] { 
+    float:left; margin-left:-3px; margin-top:0px; height:12px; padding:8px 12px; 
+    border:1px solid #e5e5e8; border-radius:0px 3px 3px 0px;  }
+
+#register ul li input[type="text"]:focus, #register ul li input[type="password"]:focus { 
+    border-color:#f06b48;outline:0; 
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6) }
+
+#register ul li a { color:#b0b0b0; }
+
+#register ul li input[type="submit"]:hover { cursor:pointer; }
+
+#register ul li input[type="submit"] { float:left;
+    border:1px solid #a47025; color:#fff;
+    border-radius:3px; padding:5px; width:75px; 
+    height:32px; font-size:14px; margin-left:134px;
+    text-shadow: rgba(0, 0, 0, 0.35) 0 1px 0;
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+    background: -webkit-linear-gradient(#f78e72, #f06b48);
+    background: -o-linear-gradient(#f78e72, #f06b48);  
+    background: -moz-linear-gradient(#f78e72, #f06b48);   
+    background: linear-gradient(#f78e72, #f06b48);  
+}
 
 
 /* Images
@@ -133,12 +190,11 @@ ul#images li .dislike { float:left; margin-left:15px;
 
 #timeline li.first { margin:0px!important; }
 
-#timeline li a { float:left; width:15px; height:25px; font-size:20px; font-weight:700; 
-                 padding:9px 14px; background:url('../_img/icons/timeline.png'); color:#9d9191; }
+#timeline li a { float:left; width:15px; height:25px; font-size:20px; font-weight:700;
+                 padding:9px 14px; background:url('../_img/icons/timeline.png'); color:#9d9191;
+                 text-transform:uppercase; }
 
-#timeline li .timeline-bar { float:left; background:url(); width:7px; height:auto; min-height:195px; margin-left:-25px; margin-top:44px; }
-
-#timeline li .users_overview { float:left; width:590px; height:auto; min-height:200px; 
+#timeline li .users_overview { float:left; width:590px; height:auto; min-height:195px; 
 background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px; margin-left:18px;
 
 
@@ -148,7 +204,7 @@ background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px;
 ------------------------------------------------------------------------------- */
 
 #filter_users { float:left; position:relative; width:261px; height:350px; 
-          margin:23px 0px 0px 40px; background-color:#d9d9d9; }
+          margin:23px 0px 0px 40px; background-color:#d9d9d9; padding-bottom:25px; }
 
 #filter_users:after { content:""; position:absolute; 
                 background:url('../_img/icons/ribbon-shadow.png'); top:50px;
@@ -162,7 +218,7 @@ background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px;
 
 #filter_users ul li { float:left; width:14%; margin:10px 0px 0px 50px; list-style: none; }
 
-#filter_users ul li label { font-size:13px; font-weight:700; }
+#filter_users ul li label { font-size:13px; font-weight:700; text-transform:uppercase; }
 
 #filter_users input[type="checkbox"] { display:none; }
 
