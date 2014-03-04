@@ -132,39 +132,33 @@
 /* Settings
 ------------------------------------------------------------------------------- */
 
-#register { display:table; width:350px; height:auto; margin:0 auto; border-radius:3px; 
-         box-shadow:0px 0px 7px 0px rgba(50, 50, 50, 0.3); }
+/*#settings { display:table; width:350px; height:auto; margin:0 auto; border-radius:3px; 
+         box-shadow:0px 0px 7px 0px rgba(50, 50, 50, 0.3); }*/
 
-#register ul { float:left; width:100%; padding:45px; }
+#settings ul { float:left; width:100%; padding:45px; }
 
-#register ul li { float:left; width:100%; list-style:none; margin-bottom:5px; }
+#settings ul li { float:left; width:100%; list-style:none; margin-bottom:5px; }
 
-#register ul li span { float:left; padding:8px 12px; line-height:1; 
-                    border:1px solid #e5e5e8; border-radius:3px; }
+#settings ul li label { float:left; width:137px; }
 
-#register ul li span.user { width:10px; height:12px; 
-         background:url('../_img/icons/icon_961.png') no-repeat center center; }
-
-#register ul li span.pass { width:10px; height:12px; 
-         background:url('../_img/icons/icon_10571.png') no-repeat 43% center; }
-
-#register ul li span.email { width:10px; height:12px; 
-         background:url('../_img/icons/icon_2404.png') no-repeat 43% center; }
-
-#register ul li input[type="text"], #register ul li input[type="password"] { 
+#settings ul li input[type="text"], #settings ul li input[type="password"] { 
     float:left; margin-left:-3px; margin-top:0px; height:12px; padding:8px 12px; 
-    border:1px solid #e5e5e8; border-radius:0px 3px 3px 0px;  }
+    border:1px solid #e5e5e8; border-radius:0px 3px 3px 0px; width:350px;  }
 
-#register ul li input[type="text"]:focus, #register ul li input[type="password"]:focus { 
+#settings ul li input[type="text"]:focus, #settings ul li input[type="password"]:focus, 
+#settings ul li textarea:focus  { 
     border-color:#f06b48;outline:0; 
     -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6);
     box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,152,125,.6) }
 
-#register ul li a { color:#b0b0b0; }
+#settings ul li a { color:#b0b0b0; }
 
-#register ul li input[type="submit"]:hover { cursor:pointer; }
+#settings ul li input[type="submit"]:hover { cursor:pointer; }
 
-#register ul li input[type="submit"] { float:left;
+#settings ul li textarea { float:left; margin-left:-3px; margin-top:0px; width:350px;
+    resize:none; padding:8px 12px; border:1px solid #e5e5e8; border-radius:0px 3px 3px 0px; }
+
+#settings ul li input[type="submit"] { float:left;
     border:1px solid #a47025; color:#fff;
     border-radius:3px; padding:5px; width:75px; 
     height:32px; font-size:14px; margin-left:134px;

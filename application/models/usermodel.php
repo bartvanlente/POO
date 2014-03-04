@@ -26,6 +26,13 @@ class usermodel extends CI_Model
         return hash( "sha512", base64_encode( sha1( $password . $salt, true) . $salt ) );
     }
     
+    public static function getUser( $id )
+    {
+        $query = get_instance()->db->get_where('users', array('id' => $id) );
+        
+        return $query->result();
+    }
+
     public static function GetUsers() 
     {
         $query = get_instance()->db->query("SELECT * FROM `users` ORDER BY `username`");
