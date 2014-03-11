@@ -14,6 +14,16 @@ foreach( $this->data['images'] as $i => $image )
 }
 ?>
                 </ul>
+            <a href="./upload">
+                <div id="upload_button">
+                    <div id="upload_left" style="float:left">
+                        <h3 style="font-size:28px;">Upload</h3>
+                    </div>
+                    <div id="upload_right" style="float:right;">
+                        <img src="public/_img/icons/icon_643.png" height="80px" width="80px"><img>
+                    </div>
+                </div>
+            </a>
                 <div id="filter">
                     <div class="title">Filteren</div>
                     <ul>

@@ -193,6 +193,13 @@ ul#images li .dislike { float:left; margin-left:15px;
                         width:35px; height:35px; }
 
 
+/* Upload button index page 
+---------------------------- -------------------- */
+
+#upload_button { float:left; padding:5px; margin-left:40px; width:260px; }
+
+#upload_left { line-height:85px; }
+
 /* Filter
 ------------------------------------------------------------------------------- */
 
@@ -287,3 +294,39 @@ background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px;
 #footer ul li.first { padding-left:20px; }
 
 #footer ul li a { float:left; color:#ededed; font-size:19px; }
+
+
+/* Upload page  */
+
+#upload_left { float:left; padding-left:0px; margin-left:0px; }
+
+#upload_left ul {  }
+
+#upload_left ul li { list-style:none;  margin-left:0px; 
+                        height:52px; width:150px; }
+
+#upload_left ul li a { color:black; float:left; font-size:21px; padding-right:45px;
+                       text-transform:capitalize; line-height:50px; }
+
+#upload_image { float:left; border:1px solid #d3d3d3; padding:10px; min-height:100px;
+                min-width:400px;  }
+
+#upload_album { float:left; border:1px solid #d3d3d3; padding:10px; min-height:100px;
+                min-width:400px; }
+
+.active_menu { background:#d3d3d3; }
+
+.active_upload { display:inline-block; }
+
+#upload_image input[type="text"] { float:left; margin-left:-3px; margin-top:0px; 
+                                  height:12px; padding:8px 12px; border:1px solid #e5e5e8; 
+                                  border-radius:0px 3px 3px 0px; width:200px; }
+
+#upload_left li .span_image { background:url('../_img/icons/32261-84.png') no-repeat; 
+                            width:40px; height:52px; float:left; padding-right:5px; }
+
+#upload_left li .span_album { background:url('../_img/icons/1249-84.png') no-repeat; 
+                              background-position: left center;
+                            width:40px; height:52px; float:left; padding-right:5px; 
+                            padding-top:5px; }
+
