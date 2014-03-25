@@ -319,9 +319,7 @@ background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px;
 
 .active_upload { display:inline-block; }
 
-#upload_image input[type="text"] { float:left; margin-left:-3px; margin-top:0px; 
-                                  height:12px; padding:8px 12px; border:1px solid #e5e5e8; 
-                                  border-radius:0px 3px 3px 0px; width:200px; }
+
 
 #upload_left li .span_image { background:url('../_img/icons/32261-84.png') no-repeat; 
                             width:40px; height:52px; float:left; padding-right:5px; }
@@ -330,4 +328,25 @@ background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px;
                               background-position: left center;
                             width:40px; height:52px; float:left; padding-right:5px; 
                             padding-top:5px; }
+
+#file_input { width:95%; padding:5px 15px 5px 5px; border:2px solid #d3d3d3; border-radius:3px; background: #EEEEEE; }
+
+#file_info { margin-top:10px; }
+
+#file_info p { font-weight:bold; font-size:15px; margin-top:5px; }
+
+.upload_input { width:440px; padding:5px; }
+
+#select_file_category { width:451px; margin-top:5px; }
+
+#select_album_category { width:451px; margin-top:5px; }
+
+#upload_file_submit { background:#F06B48; border:0px; padding:5px; font-weight:bold; color:#fff; border-radius:3px; margin-top:10px; }
+
+#upload_file_submit:hover { mouse:pointer; }
+
+#upload_album_submit { background:#F06B48; border:0px; padding:5px; font-weight:bold; color:#fff; border-radius:3px; margin-top:10px; }
+
+#upload_album_submit:hover { mouse:pointer; }
+
 
