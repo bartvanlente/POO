@@ -5,11 +5,10 @@ class loginmodel extends CI_Model
     public static function login( $username, $password )
     {
         $user = get_instance()->db->get_where( 'users', array( 'username' => $username ) )->result_object();
-        $user = $user[0];
         
-        if( isset( $user->id ) && $user->id != 0 )
+        if( isset( $user[0]->id ) && $user[0]->id != 0 )
         {
-            if( $user->password == usermodel::password( $password ) )
+            if( $user[0]->password == usermodel::password( $password ) )
             {
                 return $user;
             }

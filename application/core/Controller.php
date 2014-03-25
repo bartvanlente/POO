@@ -8,7 +8,11 @@ class Controller extends CI_Controller
         
         $this->load->library('Template');
         $this->load->helper('html');
-        $this->load->model( array('usermodel', 'loginmodel', 'imagemodel'), '', TRUE );
+    }
+    
+    public function message( $title, $message = 'Het formulier is niet juist ingevuld, probeer het nog eens.' ) 
+    {
+        $this->session->set_userdata( 'message', array( $title, $message ) );
     }
     
 }

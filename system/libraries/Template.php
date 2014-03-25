@@ -48,7 +48,16 @@ class Template
     
     public function __destruct()
     {       
-        return $this->_rendered;
+        if( get_instance()->session->userdata('message') )
+        {
+            $message = get_instance()->session->userdata('message');
+
+            $this->_rendered .= '<div id="message" class="'. $message[0] .'">'. $message[1] .'</div>';
+
+            get_instance()->session->unset_userdata('message');
+        }
+        
+        echo $this->_rendered;
     }
 }
 

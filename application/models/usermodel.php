@@ -2,18 +2,17 @@
 
 class usermodel extends CI_Model
 {
-    public static function manage( $data )
+    public static function insert( $data )
     {
-        $user = new usersmodel( $data->id );
-        $user->firstname = $data->username;
-        $user->lastname = $data->lastname;
-        $user->email = $data->email;
-        $user->username = $data->username;
-        $user->password = self::password( $data->password );
+        $user = new usermodel();
+        $user->username = $data['username'];
+        $user->password = self::password($data['password']);
+        $user->email = $data['email'];
         $user->status = 1;
-        $user->last_login = date("d-m-Y H:i:s");
+        
+        return get_instance()->db->insert('users', $user);
     }
-    
+       
     public static function logout()
     {
         get_instance()->session->unset_userdata('user');
@@ -24,6 +23,27 @@ class usermodel extends CI_Model
     {
         $salt = '54t459t3049r3r';
         return hash( "sha512", base64_encode( sha1( $password . $salt, true) . $salt ) );
+    }
+    
+    public static function updatePassword( $id, $password )
+    {
+        get_instance()->db->where('id', $id);
+        
+        get_instance()->db->update( 'users', array('password' => self::password($password) ) ); 
+    }
+    
+    public static function getUsername( $username )
+    {
+        $query = get_instance()->db->get_where('users', array('username' => $username))->result();
+        
+        return ( $query  ? $query : false );
+    }
+    
+    public static function getEmail( $email )
+    {
+        $query = get_instance()->db->get_where('users', array('email' => $email))->result();
+        
+        return ( $query  ? $query : false );
     }
     
     public static function getUser( $id )

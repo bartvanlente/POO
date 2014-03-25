@@ -9,6 +9,8 @@ class indexcontroller extends Controller
         $this->template->setView('index');
         
         $this->template->setTemplate('templates/default');
+        
+        $this->message('success', 'test');
     }
     
     public function home()

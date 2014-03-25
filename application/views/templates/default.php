@@ -30,7 +30,7 @@ if( loginmodel::is_logged_in() )
     $items = array('settings', 'logout');
     foreach( $items as $i => $item )
     {
-        echo '                    <li><a'. ( $this->uri->segment(1) == $item ? ' class="active"' : '' ) .' href="'. $item .'">'. $item .'</a></li>'. "\n";
+        echo '                    <li><a'. ( $this->uri->segment(1) == $item ? ' class="active"' : '' ) .' href="'. ( $item == 'logout' ? 'login/' : '' ) . $item .'">'. $item .'</a></li>'. "\n";
     }
 
     echo '                </ul>'. "\n";
@@ -57,10 +57,10 @@ else
         </div>
         <div id="footer">
             <ul>
-                <li><a href="#">Disclaimer</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="disclaimer">Disclaimer</a></li>
+                <li><a href="disclaimer">Privacy Policy</a></li>
+                <li><a href="sitemap">Sitemap</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </div>
     </body>

@@ -40,13 +40,16 @@
 
 $route['default_controller'] = 'indexcontroller';
 
+$old = explode( '/', $_SERVER["REQUEST_URI"] );
+$old = array_slice( $old , 2);
+
 $url    = explode( '/', str_replace( '-','', $_SERVER["REQUEST_URI"] ) );
 $url    = array_slice( $url , 2);
 
 if( file_exists( APPPATH . '/controllers/' . $url[0] . 'controller' . '.php' ) )
 {
-    $route[ $url[0]] = $url[0] .'controller';
-    $route[ $url[0] .'/(:any)'] = $url[0] .'controller/$1';
+    $route[ $old[0]] = $url[0] .'controller';
+    $route[ $old[0] .'/(:any)'] = $url[0] .'controller/$1';
 }
 else
 {
