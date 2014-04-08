@@ -56,7 +56,7 @@ else
     $route['(:any)'] = 'indexcontroller/$1';
 }
 
-//$route['404_override'] = 'indexcontroller';
+$route['404_override'] = 'notfoundcontroller';
 
 $route['translate_uri_dashes'] = FALSE;
 

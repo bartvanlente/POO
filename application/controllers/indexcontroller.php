@@ -10,7 +10,7 @@ class indexcontroller extends Controller
         
         $this->template->setTemplate('templates/default');
         
-        $this->message('success', 'test');
+//        $this->message('success', 'test');
     }
     
     public function home()
