@@ -3,11 +3,10 @@
 
 foreach( $this->data['images'] as $i => $image )
 {
-
     echo '                    <li>'. "\n";
     echo '                        <h2>'. $image->title .'</h2><p>0 Comments 0 Points</p>'. "\n";
     echo '                        <a href="images/'. $image->url .'">'. "\n";
-    echo '                            <img src="public/_img/uploads/'. $image->file_name .'" alt="'. $image->title .'" >'. "\n";
+    echo '                            <img src="'. $image->path .'" alt="'. $image->title .'" >'. "\n";
     echo '                        </a>'. "\n";
     echo '                        <div class="like"></div>'. "\n";
     echo '                        <div class="dislike"></div>'. "\n";

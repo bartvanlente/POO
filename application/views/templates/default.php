@@ -11,12 +11,6 @@
         
     </head>
     <body>
-        <!-- Success/error messages -->
-        <div id="">
-            
-        </div>
-        <!-- End Success/error messages -->
-        
         <div id="wrapper">
             <div id="navigation">
                 <ul class="left">
