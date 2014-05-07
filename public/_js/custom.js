@@ -21,7 +21,10 @@ var $users = {
 var $upload = {
     
     init : function() {
-        $('#upload_album').css({'display': 'none'});
+        
+        $upload.select();
+        
+        $('.album').css({'display': 'none'});
         
         $('#upload_left ul li a').click(function(e) {
      
@@ -36,9 +39,43 @@ var $upload = {
             e.preventDefault();
 
         }); 
+    },
+            
+    select : function() {
+        $('#select_file_category').change(function(){			
+            if( $(this).find("option:selected").html() == 'album' )
+            {
+                $('.album').css({'display': 'block'});
+                $('.image').css({'display': 'none'});
+            }
+            else
+            {
+                $('.album').css({'display': 'none'}); 
+                $('.image').css({'display': 'block'});
+            }
+        });   
+    }
+}    
+
+var $comments = {
+    
+    init : function() {
+        
+        $('#chars_left').text(250);
+        
+        $('#comment').keyup(function() {
+           
+            var chars_left = (250 - $(this).val().length);
+            
+            $('#chars_left').text(chars_left);
+            
+            if(chars_left < 0) {
+                $('#chars_left').addClass('chars_limit');
+            }
+        });
     }
     
-}     
+}
 
 $(document).ready(function() {
 
@@ -47,5 +84,7 @@ $(document).ready(function() {
     $users.init();
     
     $upload.init();
+    
+    $comments.init();
 
 });

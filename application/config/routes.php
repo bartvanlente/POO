@@ -46,17 +46,31 @@ $old = array_slice( $old , 2);
 $url    = explode( '/', str_replace( '-','', $_SERVER["REQUEST_URI"] ) );
 $url    = array_slice( $url , 2);
 
+
+
+
 if( file_exists( APPPATH . '/controllers/' . $url[0] . 'controller' . '.php' ) )
 {
-    $route[ $old[0]] = $url[0] .'controller';
+
     $route[ $old[0] .'/(:any)'] = $url[0] .'controller/$1';
+    $route[ $old[0]] = $url[0] .'controller';
+    
 }
 else
 {
+    
     $route['(:any)'] = 'indexcontroller/$1';
+
 }
 
-$route['404_override'] = 'notfoundcontroller';
+if($url[0] == 'image' && $url[1] == 'addcomment' ) {
+    
+    $route[$url[0].'/addcomment/(:any)'] = 'imagecontroller/addcomment/$1'; 
+} elseif ($url[0] == 'image') {
+    $route[$url[0].'/(:any)'] = 'imagecontroller/index/$1';
+}
+
+//$route['404_override'] = 'indexcontroller';
 
 $route['translate_uri_dashes'] = FALSE;
 

@@ -1,45 +1,39 @@
-<div id="upload_left">
-    <ul>
-        <li class="active_menu">
-            <a href="#upload_image">
-               <span class="span_image"></span>
-                Image 
-            </a>
-            
-        </li>
-        <li>
-            <a href="#upload_album">
-              <span class="span_album"></span>
-                Album  
-            </a>
-            
-        </li>
-    </ul>
-</div>
-
-
-<div id="upload_image" class="active_upload">
-    <table>
-    <form method="post" action="upload/do_upload" enctype="multipart/form-data">
-        <tr>
-            <td><input type="text" name="upload_title" /></td>
-        </tr>
-        <tr>
-            <td><input type="file" name="image" /></td>    
-        </tr>
-        <tr>
-            <td><input type="submit" value="Upload" /></td> 
-        </tr>
-        
+<ul id="steps">                  
+<?php
+$i = 0;
+foreach( $this->steps as $url => $step )
+{
+    $i ++;
+    if( $i > $this->step )
+    {
+        echo '<li><a href="javascript:;"><span>' . $step . '</span></a></li>' . "\n";    
+    }
+    else
+    {       
+        $active = $this->step == $i ? '<strong>' . $step . '</strong>' : $step; 
+        echo '<li><a href="' . $url . '" class="active"><span>' . $active . '</span></a></li>' . "\n";    
+    }
+}
+?>
+</ul>
+<div id="upload">
+    <select class="upload_input" id="select_file_category">
+        <option value="image">image</option>
+        <option value="album">album</option>
+    </select>
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="image">
+            <div id="file_input">
+                <input type="file" name="image" size="50" />
+            </div>
+            <input type="submit" value="Volgende stap" id="upload_file_submit" />
+        </div>
+        <div class="album">
+            Album title:<input type="text" name="upload_title" class="upload_input" />
+            <div id="file_input">
+                <input type="file" name="album[]" multiple="" />
+            </div>
+            <input type="submit" name="is_album" value="Volgende stap" id="upload_file_submit" />
+        </div>
     </form>
-    </table>
 </div>
-
-<div id="upload_album">
-<p>Later kan je titels aanpassen etc.</p>
-<form method="post" action="upload/do_upload" enctype="multipart/form-data">
-    <input type="file" name="image[]" multiple="" />
-    <input type="submit" value="Upload" />
-</form>
-</div>
-<div style="clear:both;"></div>

@@ -4,7 +4,7 @@ class settingscontroller extends Controller
 {
     public function index() 
     {
-        $this->template->assign('user', usermodel::getUser( $this->session->userdata('user')->id ) );
+        $this->template->assign('user', usermodel::getUser( $this->session->userdata('user')[0]->id ) );
         
         $this->template->setView('settings');
         
