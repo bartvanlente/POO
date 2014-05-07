@@ -2,25 +2,26 @@
 
 class indexcontroller extends Controller
 {
-    public function __construct() 
-    {    
+
+    public function __construct() {
+        
         parent::__construct();
+        
     }
-    
+        
     public function index()
     {       
+        
         $images = imagemodel::getImages();
         
-        foreach($images as $image) 
-        {
-            $result = imagemodel::getReactionCount( $image->id );
+        foreach($images as $image) {
+            
+            
+            $result = imagemodel::getReactionCount($image->id);
 
-            if( $result ) 
-            {
+            if($result) {
                 $image->reactions = $result[0]['reaction'];
-            } 
-            else 
-            {
+            } else {
                 $image->reactions = 0;
             }
         }
@@ -38,24 +39,29 @@ class indexcontroller extends Controller
         self::index();
     }
     
-    public function rate() 
-    {
-        if(!$this->session->userdata('user')) 
-        {
-            echo "You need to be logged in to like/dislike";   
-        }
-        else 
-        {
-            if($this->input->post('type') == 'like') 
-            {
+    public function rate() {
+        
+        // Like or Dislike post
+        
+        if(!$this->session->userdata('user')) {
+           
+            echo "You need to be logged in to like/dislike";
+            
+        } else {
+            
+            
+            if($this->input->post('type') == 'like') {
                 $rate = +1;
-            } 
-            elseif($this->input->post('type') == 'dislike') 
-            {
+            } elseif($this->input->post('type') == 'dislike') {
                 $rate = -1;
             } 
             
-            imagemodel::rateImage( $rate, $this->input->post('') );
+            imagemodel::rateImage($rate, $this->input->post(''))
+            
         }
+
+        //return $this->input->post('type');
+        
     }
+    
 }
