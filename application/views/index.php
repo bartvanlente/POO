@@ -16,8 +16,8 @@ foreach( $this->data['images'] as $i => $image )
                                                     <div class="comments"><i class="icon-comments"></i> <a href="<?php echo 'image/' . $image->category . '/' .  $image->id . '/' . $image->url;?>"><?php echo $image->reactions; ?></a></div>
                                                 </div>
                                                 <div class="pull-right">
-                                                    <div class="like"><a href="#"><i class="icon-like"></i> 56</a></div>
-                                                    <div class="dislike"><a href="#"><i class="icon-dislike"></i> 32</a></div>
+                                                    <div class="like" data-file="<?php echo $image->id; ?>"><a href="#"><i class="icon-like"></i><span id="likes"><?php echo $image->likes; ?></span></a></div>
+                                                    <div class="dislike" data-file="<?php echo $image->id; ?>"><a href="#"><i class="icon-dislike"></i><span id="dislikes"><?php echo $image->dislikes; ?></span></a></div>
                                                 </div>
                                             </div>
                                             

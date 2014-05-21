@@ -84,6 +84,7 @@ if( loginmodel::is_logged_in() )
                             </div>-->
                             <div class="buttons-line">
                                 <a href="<?php echo base_url();?>upload" class="btn btn-primary btn-block custom-button">Post Fun</a>
+                                <a href="<?php echo base_url(); ?>category/create" class="btn btn-primary btn-block custom-button">Create Category</a>
                                 <a href="<?php echo base_url();?>settings" class="btn btn-primary btn-block custom-button">Profile & Settings</a>
                                 <a href="<?php echo base_url();?>login/logout" class="btn btn-primary btn-block custom-button">Logout</a>
                             </div>

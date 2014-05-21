@@ -77,6 +77,51 @@ var $comments = {
     
 }
 
+var $rate_picture = {
+    
+    init : function() {
+        
+        $('.like, .dislike').on('click', function(e) {
+            
+            console.log($(this).attr('class') + ' ' + $(this).attr('data-file'));
+            
+            e.preventDefault(e);
+            //window.alert($(this).attr('class'));
+            $.ajax({
+                
+                'type': 'post',
+                'url': '/POO/index/rate',
+                'datatype': 'html',
+                'data': {'type': $(this).attr('class'), 'img_id': $(this).attr('data-file')},
+                success: function(response){
+                    
+                    // do something
+//                    window.alert(response);
+                    try {
+                        
+                        $likes = jQuery.parseJSON(response);
+                        
+                        $('.like span').html($likes['like']);
+                        $('.dislike span').html($likes['dislike']);
+                    
+                    } catch(error) {
+                        window.alert("You need to be logged in to like. ");
+                    }
+                    
+
+                    
+//                    window.alert($likes['like']);
+                    
+                }
+                
+            });
+            
+        });
+        
+    }
+    
+}
+
 $(document).ready(function() {
 
     $navigation.init();
@@ -86,5 +131,7 @@ $(document).ready(function() {
     $upload.init();
     
     $comments.init();
+    
+    $rate_picture.init();
 
 });

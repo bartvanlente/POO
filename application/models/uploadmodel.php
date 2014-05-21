@@ -28,7 +28,6 @@ class uploadmodel extends CI_Model
             'url' => $url,
             'file_name' => $file,
             'ext' => $ext,
-            'points' => 0,
             'user_id' => $user_id,
             'album_id' => $album_id
         );
