@@ -43,22 +43,22 @@ class indexcontroller extends Controller
         
         // Like or Dislike post
         
-        if(!$this->session->userdata('user')) {
-           
-            echo "You need to be logged in to like/dislike";
-            
-        } else {
-            
-            
-            if($this->input->post('type') == 'like') {
-                $rate = +1;
-            } elseif($this->input->post('type') == 'dislike') {
-                $rate = -1;
-            } 
-            
-            imagemodel::rateImage($rate, $this->input->post(''))
-            
-        }
+//        if(!$this->session->userdata('user')) {
+//           
+//            echo "You need to be logged in to like/dislike";
+//            
+//        } else {
+//            
+//            
+//            if($this->input->post('type') == 'like') {
+//                $rate = +1;
+//            } elseif($this->input->post('type') == 'dislike') {
+//                $rate = -1;
+//            } 
+//            
+//            imagemodel::rateImage($rate, $this->input->post(''))
+//            
+//        }
 
         //return $this->input->post('type');
         

@@ -8,7 +8,7 @@
                                             <hr />
                                             <div class="counters-line">
                                                 <div class="pull-left">
-                                                    <div class="user"><i class="icon-user"></i> <a href="profile.html"><?php echo usermodel::getUser( $this->image->user_id )[0]->username;?></a></div>
+                                                    <div class="user"><i class="icon-user"></i> <a href="/POO/users/<?php echo usermodel::getUser( $this->image->user_id )[0]->username;?>"><?php echo usermodel::getUser( $this->image->user_id )[0]->username;?></a></div>
                                                 </div>
                                                 <div class="pull-right">
                                                     <div class="like"><a href="#"><i class="icon-like"></i> 56</a></div>

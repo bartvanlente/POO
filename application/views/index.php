@@ -12,12 +12,12 @@ foreach( $this->data['images'] as $i => $image )
                                             <hr />
                                             <div class="counters-line">
                                                 <div class="pull-left">
-                                                    <div class="user"><i class="icon-user"></i> <a href="profile.html"><?php echo usermodel::getUser( $image->user_id )[0]->username;?></a></div>
+                                                    <div class="user"><i class="icon-user"></i> <a href="/POO/users/<?php echo usermodel::getUser( $image->user_id )[0]->username;?>"><?php echo usermodel::getUser( $image->user_id )[0]->username;?></a></div>
                                                     <div class="comments"><i class="icon-comments"></i> <a href="<?php echo 'image/' . $image->category . '/' .  $image->id . '/' . $image->url;?>"><?php echo $image->reactions; ?></a></div>
                                                 </div>
                                                 <div class="pull-right">
                                                     <div class="like"><a href="#"><i class="icon-like"></i> 56</a></div>
-                                                    <div class="dislike"><a href="#"><i class="icon-dislike"></i> 32</a></div>
+                                                    <div class="dislike"><a href="#"><i class="icon-dislike-purple"></i> 32</a></div>
                                                 </div>
                                             </div>
                                             

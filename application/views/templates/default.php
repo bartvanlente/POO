@@ -20,7 +20,8 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>public/_fileupload/css/jquery.fileupload-ui.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>public/_css/jquery.tagsinput.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>public/_css/style.css">
-
+        <link rel="stylesheet" href="<?php echo base_url(); ?>public/_css/default.css">
+        
         <script src="<?php echo base_url(); ?>public/_js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         
         <script src="<?php echo base_url(); ?>public/_js/vendor/jquery-1.10.1.min.js"></script>

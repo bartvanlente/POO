@@ -1,0 +1,16 @@
+/* Timeline
+------------------------------------------------------------------------------- */
+
+#timeline { float:left; width:640px; height:auto; overflow:hidden; }
+
+#timeline li { float:left; width:100%; margin:0!important; margin-top:6px!important; list-style:none!important; }
+
+#timeline li.first { margin:0px!important; }
+
+#timeline li > a { float:left; width:43px; height:43px; font-size:20px; font-weight:700;
+                 padding:7px 16px; background:url('../_img/icons/timeline.png'); color:#9d9191;
+                 text-transform:uppercase; text-decoration:none; }
+
+#timeline li .users_overview { float:left; width:590px; height:auto; min-height:195px; 
+background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px; margin-left:18px;
+}

@@ -13,6 +13,18 @@ class usermodel extends CI_Model
         return get_instance()->db->insert('users', $user);
     }
        
+    public static function update( $data )
+    {
+        $user = get_instance()->db->get_where('users', array('id' => $data['id'] ) )->row();
+        ( $data['password'] != '' ? $user->password = self::password($data['password']) : '' );
+        $user->email = $data['email'];
+        $user->firstname = $data['firstname'];
+        $user->lastname = $data['lastname'];
+        $user->more_information = $data['more_info'];
+        
+        return get_instance()->db->update('users', $user, array( 'id' => $data['id'] ) );
+    }
+    
     public static function logout()
     {
         get_instance()->session->unset_userdata('user');
@@ -34,7 +46,7 @@ class usermodel extends CI_Model
     
     public static function getUsername( $username )
     {
-        $query = get_instance()->db->get_where('users', array('username' => $username))->result();
+        $query = get_instance()->db->get_where('users', array('username' => $username))->row();
         
         return ( $query  ? $query : false );
     }

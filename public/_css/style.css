@@ -749,6 +749,7 @@ aside .widget:first-child {
   vertical-align: middle;
   background: url('../_img/post-icons.png') no-repeat;
 }
+
 .main-post .counters-line i.icon-date {
   background-position: center 0px;
 }
@@ -762,6 +763,14 @@ aside .widget:first-child {
   background-position: center -45px;
 }
 .main-post .counters-line i.icon-dislike {
+  background-position: center -60px;
+}
+.main-post .counters-line i.icon-like-purple {
+  background: url('../_img/post-icons-purple.png') no-repeat;
+  background-position: center -45px;
+}
+.main-post .counters-line i.icon-dislike-purple {
+  background: url('../_img/post-icons-purple.png') no-repeat;
   background-position: center -60px;
 }
 .main-post figure {

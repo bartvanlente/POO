@@ -1,34 +1,59 @@
-                <ul id="timeline">
+                    <div class="col-sm-9 right-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="main-wrap">
+                                    <ul id="timeline">
 <?php
 foreach( $this->data['first_chars'] as $key => $value) 
 {
-    echo '                <li>'. "\n";
-    echo '                    <a>' . $key . '</a>'. "\n";
-    echo '                    <div class="users_overview">'. "\n";
+?>
+                                        <li>
+                                            <a><?php echo $key; ?></a>
+                                            <div class="users_overview">
+<?php
     foreach( $value as $user) 
     {
         foreach($user as $username) 
         {
-            echo '                        <p>'. $username .'</p>'. "\n";
+?>
+            <a href="/POO/users/<?php echo $username;?>"><?php echo $username; ?></a>
+<?php
         }
     }
-    echo '                    </div>'. "\n";
-    echo '                </li>'. "\n";
+?>
+                                            </div>
+                                        </li>
+<?php
 }
 ?>
-                </ul>
-                <div id="filter_users">
-                    <div class="title">Filteren</div>
-                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="col-sm-3 left-aside">
+                        <div class="sidebar-menu">
+                            <div class="top-menu">
+                                <div class="section-title">Categories</div>
+                            </div>
+                            <div class="sidebar-content sidebar-content-category">
+                                <div class="menu-group">
+                                    <ul>
 <?php
-
 foreach( $this->data['characters'] as $character )
 {
-    echo '                        <li>'. "\n";
-    echo '                            <input id="'. $character .'" type="checkbox" class="checkbox">'. "\n";
-    echo '                            <label for="'. $character .'"><span></span>'. $character .'</label>'. "\n";
-    echo '                        </li>'. "\n";
+?>
+                                        <li>
+                                            <div class="custom-checkbox">
+                                                <input type="checkbox" value="check1" name="check" id="<?php echo $character; ?>" checked />
+                                                <label for="<?php echo $character; ?>"><?php echo $character; ?></label>
+                                            </div>
+                                        </li>
+<?php
 }
 ?>
-                    </ul>
-                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>

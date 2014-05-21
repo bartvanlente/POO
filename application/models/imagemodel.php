@@ -20,6 +20,15 @@ class imagemodel extends CI_Model
                                 . 'AND `images`.`id`="'.$id.'" ')->row();
     }
     
+    public static function getUserImages( $id )
+    {
+        return get_instance()->db->query( "SELECT `categories`.`title` AS `category`, "
+                                            . "`images`.`id`, `images`.`title`, `url`, `file_name`, `points`, `user_id` "
+                                        . "FROM `images`, `categories` "
+                                        . "WHERE `categories`.`id` = `images`.`categorie_id` "
+                                        . "AND `images`.`user_id` = ?", $id )->result_object();
+    }
+    
     public function getImageReactions($id) 
     {
         return $this->db->query('SELECT `reaction`, `date`, `users`.`username` '
