@@ -11,10 +11,14 @@ class hotcontroller extends Controller {
         
         $images = hotmodel::gethottest();
         
-        foreach( $images as $image ) 
-        {    
-            $result = imagemodel::getReactionCount( $image->id );
-
+        foreach($images as $image) 
+        {
+            $likes = imagemodel::getImageLikes($image->id);
+            $result = imagemodel::getReactionCount($image->id);
+            
+            $image->likes = $likes[0]['like'];
+            $image->dislikes = $likes[0]['dislike'];
+            
             if($result) 
             {
                 $image->reactions = $result[0]['reaction'];
@@ -24,7 +28,7 @@ class hotcontroller extends Controller {
                 $image->reactions = 0;
             }
         }
-        
+
         $this->template->assign('images', $images );
 
         $this->template->setView('index');

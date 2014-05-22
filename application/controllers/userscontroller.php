@@ -29,7 +29,11 @@ class userscontroller extends Controller
             foreach($images as $image) 
             {
                 $result = imagemodel::getReactionCount( $image->id );
+                $likes = imagemodel::getImageLikes($image->id);
 
+                $image->likes = $likes[0]['like'];
+                $image->dislikes = $likes[0]['dislike'];
+                
                 if($result) 
                 {
                     $image->reactions = $result[0]['reaction'];

@@ -8,11 +8,11 @@
                                             <hr />
                                             <div class="counters-line">
                                                 <div class="pull-left">
-                                                    <div class="user"><i class="icon-user"></i> <a href="/POO/users/<?php echo usermodel::getUser( $this->image->user_id )[0]->username;?>"><?php echo usermodel::getUser( $this->image->user_id )[0]->username;?></a></div>
+                                                    <div class="user"><i class="icon-user"></i> <a href="profile.html"><?php echo usermodel::getUser( $this->image->user_id )[0]->username;?></a></div>
                                                 </div>
                                                 <div class="pull-right">
-                                                    <div class="like"><a href="#"><i class="icon-like"></i> 56</a></div>
-                                                    <div class="dislike"><a href="#"><i class="icon-dislike"></i> 32</a></div>
+                                                    <div class="like" data-file="<?php echo $this->image->id; ?>"><a href="#"><i class="icon-like"></i><span id="likes"><?php echo $this->image->like; ?></span></a></div>
+                                                    <div class="dislike" data-file="<?php echo $this->image->id; ?>"><a href="#"><i class="icon-dislike"></i><span id="dislikes"><?php echo $this->image->dislike; ?></span></a></div>
                                                 </div>
                                             </div>
                                         </div>

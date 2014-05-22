@@ -3,12 +3,11 @@
 class uploadmodel extends CI_Model
 {
     
-    public function getcategories() {
-        
+    public function getcategories() 
+    {    
         $this->db->select('id, title');
         $query = $this->db->get('categories');
-        return $query->result_array();
-        
+        return $query->result_array();   
     }
 
     public function getlatest() 
@@ -28,7 +27,6 @@ class uploadmodel extends CI_Model
             'url' => $url,
             'file_name' => $file,
             'ext' => $ext,
-            'points' => 0,
             'user_id' => $user_id,
             'album_id' => $album_id
         );
@@ -36,8 +34,6 @@ class uploadmodel extends CI_Model
         $query = $this->db->insert('images', $data);
         
         return $this->db->insert_id();
-         
-         
     }
     
     public function insertTitle( $id, $title )
@@ -57,8 +53,8 @@ class uploadmodel extends CI_Model
         return get_instance()->db->update('images', $image, array( 'id' => $id ) );
     }
     
-    public function insert_album($title, $user_id) {
-        
+    public function insert_album($title, $user_id) 
+    {    
         $data = array(
             'title' => $title,
             'user_id' => $user_id

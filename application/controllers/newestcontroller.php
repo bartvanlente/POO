@@ -1,25 +1,31 @@
 <?php
 
-class newestcontroller extends Controller {
+class newestcontroller extends Controller 
+{
     
-    public function __construct() {
-        
+    public function __construct() 
+    {
         parent::__construct();
-        
     }
     
-    public function index() {
-        
+    public function index() 
+    {
         $images = imagemodel::getImages();
         
-        foreach($images as $image) {
-            
-            
+        foreach($images as $image) 
+        {
+            $likes = imagemodel::getImageLikes($image->id);
             $result = imagemodel::getReactionCount($image->id);
-
-            if($result) {
+            
+            $image->likes = $likes[0]['like'];
+            $image->dislikes = $likes[0]['dislike'];
+            
+            if($result) 
+            {
                 $image->reactions = $result[0]['reaction'];
-            } else {
+            } 
+            else 
+            {
                 $image->reactions = 0;
             }
         }
@@ -29,8 +35,6 @@ class newestcontroller extends Controller {
         $this->template->setView('index');
         
         $this->template->setTemplate('templates/default');
-        
-        $this->message('success', 'test');
         
     }
     
