@@ -22,7 +22,7 @@ class logincontroller extends Controller
             }
             else
             {
-                return false;
+                $this->message( 'danger', 'username or password is incorrect' );
                 redirect('login');
             }
         }        

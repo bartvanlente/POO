@@ -101,7 +101,7 @@ else
 $items = array('login', 'signup');
 foreach( $items as $item )
 {
-    echo '                    <li '. ( $this->uri->segment(1) == $item ? ' class="active"' : '' ) .' ><a href="'. base_url() . $item .'">'. $item .'</a></li>'. "\n";
+    echo '                    <li '. ( $this->instance->uri->segment(1) == $item ? ' class="active"' : '' ) .' ><a href="'. base_url() . $item .'">'. $item .'</a></li>'. "\n";
 }
 ?>
                     </ul>
