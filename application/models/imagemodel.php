@@ -87,6 +87,16 @@ class imagemodel extends CI_Model
         //$current = $this->db->query->();
     }
     
+    public function getCategoryImages($querystring) {
+
+        return $this->db->query( "SELECT `categories`.`title` AS `category`, "
+                                            . "`images`.`id`, `images`.`title`, `url`, `file_name`, `images`.`user_id` "
+                                        . "FROM `images`, `categories` "
+                                        . "WHERE `categories`.`id` = `images`.`categorie_id` "
+                                        . $querystring
+                                        . "ORDER BY `images`.`id` DESC " )->result_array();
+    }
+    
 }
 
 ?>

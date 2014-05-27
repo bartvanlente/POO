@@ -2,6 +2,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="main-wrap">
+                                    
 <?php
 foreach( $this->data['images'] as $i => $image )
 {
@@ -41,6 +42,7 @@ foreach( $this->data['images'] as $i => $image )
                                 <div class="section-title">Categories</div>
                             </div>
                             <div class="sidebar-content sidebar-content-category">
+                                <a id="refresh_categories" href="" style="float:right; padding-right:10px;">Refresh</a>
                                 <div class="menu-group">
                                     <ul>
 <?php
@@ -49,8 +51,8 @@ foreach(categoriemodel::getList() as $categorie )
 ?>
                                         <li>
                                             <div class="custom-checkbox">
-                                                <input type="checkbox" value="check1" name="check" id="check1" checked />
-                                                <label for="check1"><?php echo $categorie->title;?></label>
+                                                <input type="checkbox" value="check1" name="check" id="<?php echo $categorie->id; ?>" checked />
+                                                <label for="<?php echo $categorie->id; ?>" class="active_category"><?php echo $categorie->title;?></label>
                                             </div>
                                         </li>
 <?php

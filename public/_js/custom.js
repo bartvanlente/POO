@@ -83,7 +83,6 @@ var $rate_picture = {
         
         $('.like, .dislike').on('click', function(e) {
             
-            console.log($(this).attr('class') + ' ' + $(this).attr('data-file'));
             
             e.preventDefault(e);
             //window.alert($(this).attr('class'));
@@ -94,9 +93,7 @@ var $rate_picture = {
                 'datatype': 'html',
                 'data': {'type': $(this).attr('class'), 'img_id': $(this).attr('data-file')},
                 success: function(response){
-                    
-                    // do something
-//                    window.alert(response);
+
                     try {
                         
                         $likes = jQuery.parseJSON(response);
@@ -107,11 +104,6 @@ var $rate_picture = {
                     } catch(error) {
                         window.alert("You need to be logged in to like. ");
                     }
-                    
-
-                    
-//                    window.alert($likes['like']);
-                    
                 }
                 
             });
@@ -121,6 +113,74 @@ var $rate_picture = {
     }
     
 }
+
+var $category_activation = {
+    
+    init : function() {
+        
+        $('.active_category, .inactive_category').on('click', function() {
+            
+            switch($(this).attr('class')) {
+                
+                case 'active_category':
+                    $(this).removeClass('active_category');
+                    $(this).addClass('inactive_category');
+                    break;
+                
+                case 'inactive_category':
+                    $(this).removeClass('inactive_category');
+                    $(this).addClass('active_category');
+                    break;
+                
+            } 
+            
+        });
+        
+        
+        
+    }
+    
+}
+
+var $category_filter = {
+    
+    init : function() {
+        
+        $('#refresh_categories').on('click', function(e) {
+            
+            e.preventDefault();
+            
+            var filter_these = new Array();
+            
+            $('.active_category').each(function() {
+                
+                filter_these[$(this).attr('for')] = $(this).attr('for');
+            });
+           
+            filter_these.splice(0, 1);
+           
+            if(filter_these.length !== 0) {
+                
+                $.ajax({
+                    
+                    'type': 'post',
+                    'url': '/POO/index/getCategoryImages',
+                    'datatype': 'html',
+                    'data': {'categories': filter_these}, 
+                    success: function(response){
+                        window.alert(response);
+                    }
+                });
+                
+            }
+            
+            
+        });
+        
+    }
+    
+}
+
 
 $(document).ready(function() {
 
@@ -133,5 +193,9 @@ $(document).ready(function() {
     $comments.init();
     
     $rate_picture.init();
+    
+    $category_activation.init();
+    
+    $category_filter.init();
 
 });

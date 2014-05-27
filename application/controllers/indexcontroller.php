@@ -92,4 +92,39 @@ class indexcontroller extends Controller
         
     }
     
+    public function getCategoryImages() {
+        
+        $values = $this->input->post()['categories'];
+        
+        $querystring = "AND `categorie_id`= '" .$values[0] . "' ";
+        
+        for($i = 1; $i < count($values); $i++) {
+            $querystring .= "OR `categorie_id`='".$values[$i]."' ";
+        }
+
+        $images = imagemodel::getCategoryImages($querystring);
+        
+        foreach($images as $image) {
+            
+            $likes = imagemodel::getImageLikes($image->id);
+            $result = imagemodel::getReactionCount($image->id);
+            
+            $image->likes = $likes[0]['like'];
+            $image->dislikes = $likes[0]['dislike'];
+            
+            if($result) {
+                $image->reactions = $result[0]['reaction'];
+            } else {
+                $image->reactions = 0;
+            }
+        }
+        echo $this->template->assign('images', $images );
+        
+        echo $this->template->setView('index');
+        
+        echo $this->template->setTemplate('templates/default');
+        
+    }
+    
+    
 }
