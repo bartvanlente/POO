@@ -30,11 +30,11 @@ class indexcontroller extends Controller
             }
         }
 
-        $this->template->assign('images', $images );
+        $this->assign('images', $images );
 
-        $this->template->setView('index');
+        $this->setView('index');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
 
     }
     
@@ -118,11 +118,11 @@ class indexcontroller extends Controller
                 $image->reactions = 0;
             }
         }
-        echo $this->template->assign('images', $images );
+        $this->assign('images', $images );
         
-        echo $this->template->setView('index');
+        $this->setView('index');
         
-        echo $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
     }
     

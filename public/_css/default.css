@@ -14,3 +14,13 @@
 #timeline li .users_overview { float:left; width:590px; height:auto; min-height:195px; 
 background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px; margin-left:18px;
 }
+
+ul#steps { float:left; width:854px; height:60px; margin:20px 145px 30px; background:url('../_img/bgs/steps.jpg') no-repeat; padding-left:2px; }
+
+ul#steps li { float:left; width:214px; list-style:none; margin-left:-1px; }
+
+ul#steps li a { height:116px; float:left; width:214px; text-decoration:none; }
+
+ul#steps li a.active { background:url('../_img/bgs/step_active.png') no-repeat; }
+
+ul#steps li a span { color:#000; font-size:12px; margin:33px 0 0 5px; width:208px; float:left; }

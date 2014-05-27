@@ -14,21 +14,21 @@ class uploadcontroller extends Controller {
         
         if($this->session->flashdata('success_message')) {
             
-            $this->template->assign('success_message', $this->session->flashdata('success_message'));
+            $this->assign('success_message', $this->session->flashdata('success_message'));
         }
         
-        $this->template->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
+        $this->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
                                                '/POO/upload/titles' => '2. Titels aanpassen',
                                                '/POO/upload/categories' => '3. Categorie selecteren',
                                                '/POO/upload/confirm' => '4. Afronden'));
                 
-        $this->template->assign('step', 1);
+        $this->assign('step', 1);
         
-        $this->template->assign('categories', uploadmodel::getcategories());
+        $this->assign('categories', uploadmodel::getcategories());
         
-        $this->template->setView('upload');
+        $this->setView('upload');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         if( $_FILES )
         {
@@ -122,18 +122,18 @@ class uploadcontroller extends Controller {
     
     public function titles()
     {
-        $this->template->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
+        $this->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
                                                '/POO/upload/titles' => '2. Titels aanpassen',
                                                '/POO/upload/categories' => '3. Categorie selecteren',
                                                '/POO/upload/confirm' => '4. Afronden'));
                 
-        $this->template->assign( 'step', 2 );
+        $this->assign( 'step', 2 );
         
-        $this->template->assign( 'images', $this->session->userdata('images') );
+        $this->assign( 'images', $this->session->userdata('images') );
         
-        $this->template->setView('titles');
+        $this->setView('titles');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         if( $this->input->post("titles") )
         {
@@ -150,20 +150,20 @@ class uploadcontroller extends Controller {
     
     public function categories()
     {
-        $this->template->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
+        $this->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
                                                '/POO/upload/titles' => '2. Titels aanpassen',
                                                '/POO/upload/categories' => '3. Categorie selecteren',
                                                '/POO/upload/confirm' => '4. Afronden'));
                 
-        $this->template->assign( 'step', 3 );
+        $this->assign( 'step', 3 );
         
-        $this->template->assign( 'categories', categoriemodel::getList() );
+        $this->assign( 'categories', categoriemodel::getList() );
         
-        $this->template->assign( 'images', $this->session->userdata('images') );
+        $this->assign( 'images', $this->session->userdata('images') );
         
-        $this->template->setView( 'categories' );
+        $this->setView( 'categories' );
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         if( $this->input->post("select_file_category") )
         {
@@ -178,16 +178,16 @@ class uploadcontroller extends Controller {
     
     public function confirm()
     {
-        $this->template->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
+        $this->assign('steps', array('/POO/upload' => '1. Bestand kiezen', 
                                                '/POO/upload/titles' => '2. Titels aanpassen',
                                                '/POO/upload/categories' => '3. Categorie selecteren',
                                                '/POO/upload/confirm' => '4. Afronden'));
                 
-        $this->template->assign( 'step', 4 );
+        $this->assign( 'step', 4 );
         
-        $this->template->setView( 'confirm' );
+        $this->setView( 'confirm' );
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         if( $this->input->post("confirm") )
         {

@@ -4,9 +4,9 @@ class forgotpasswordcontroller extends Controller
 {
     public function index()
     {
-        $this->template->setView('forgot-password');
+        $this->setView('forgot-password');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         $this->form_validation->set_rules('username', 'username');
         $this->form_validation->set_rules('email', 'email');
@@ -58,7 +58,7 @@ class forgotpasswordcontroller extends Controller
             echo 1; exit;
             if( usermodel::gethash( $this->uri->segment(3) ) )
             {
-                $this->template->setView();
+                $this->setView();
             }
         }
     }

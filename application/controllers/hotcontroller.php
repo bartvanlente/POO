@@ -29,11 +29,11 @@ class hotcontroller extends Controller {
             }
         }
 
-        $this->template->assign('images', $images );
+        $this->assign('images', $images );
 
-        $this->template->setView('index');
+        $this->setView('index');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
     }
     

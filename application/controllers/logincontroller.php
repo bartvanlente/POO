@@ -4,9 +4,9 @@ class logincontroller extends Controller
 {
     public function index()
     {
-        $this->template->setView('login');
+        $this->setView('login');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');

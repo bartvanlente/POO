@@ -4,9 +4,9 @@ class signupcontroller extends Controller
 {
     public function index()
     {
-        $this->template->setView('register');
+        $this->setView('register');
         
-        $this->template->setTemplate('templates/default');
+        $this->setTemplate('default');
         
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');

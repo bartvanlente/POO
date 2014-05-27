@@ -16,16 +16,16 @@ class imagecontroller extends Controller
         
         if($reactions !== null) 
         {
-            $this->template->assign('reactions', $reactions);
+            $this->assign('reactions', $reactions);
         }
         if( isset( $this->session->userdata["user"][0]->id ) ) 
         {
-            $this->template->assign('logged_in', $this->session->userdata["user"][0]->id);
+            $this->assign('logged_in', $this->session->userdata["user"][0]->id);
         }
         
-        $this->template->assign('image', $image);
-        $this->template->setView('image');
-        $this->template->setTemplate('templates/default');
+        $this->assign('image', $image);
+        $this->setView('image');
+        $this->setTemplate('default');
 
     }
     

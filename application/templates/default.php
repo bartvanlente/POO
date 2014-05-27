@@ -64,7 +64,7 @@ $items = array('home', 'hot', 'newest', 'users');
 
 foreach( $items as $item )
 {
-    echo '                    <li '. ( $this->uri->segment(1) == $item ? ' class="active"' : '' ) .' ><a href="'. base_url() . $item .'">'. $item .'</a></li>'. "\n";
+    echo '                    <li '. ( $this->instance->uri->segment(1) == $item ? ' class="active"' : '' ) .' ><a href="'. base_url() . $item .'">'. $item .'</a></li>'. "\n";
 }
 ?>
                     </ul>
@@ -76,7 +76,7 @@ if( loginmodel::is_logged_in() )
 ?>
                     <div class="user-box">
                         <a href="#">
-                            <span class="name"><?php echo $this->session->userdata('user')[0]->username; ?></span>
+                            <span class="name"><?php echo $this->instance->session->userdata('user')[0]->username; ?></span>
                         </a>
                         <div class="drop-down">
 <!--                            <div class="counters-line">
@@ -116,7 +116,7 @@ foreach( $items as $item )
             <div class="container">
                 <div class="row">
 <?php
-    echo $this->template->renderFile( $this->template->view ) . "\n";
+    echo $this->renderFile( $this->view ) . "\n";
 ?>
                 </div>
             </div>

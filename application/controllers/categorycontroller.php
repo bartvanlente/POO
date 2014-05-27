@@ -8,8 +8,8 @@ class categorycontroller extends Controller {
     
     public function create() {
         
-        $this->template->setView('addcategory');
-        $this->template->SetTemplate('templates/default');
+        $this->setView('addcategory');
+        $this->SetTemplate('default');
         
         if($this->input->post()) {
             $category = $this->input->post('category');
