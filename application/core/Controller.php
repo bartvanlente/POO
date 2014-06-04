@@ -34,6 +34,11 @@ class Controller extends CI_Controller
         $this->session->set_userdata( 'message', array( $title, $message ) );
     }
         
+    public function IncludeView( $file )
+    {
+        $this->template->IncludeView( $file );
+    }
+    
     public function __destruct() 
     {
         $this->template->render();

@@ -10,7 +10,7 @@ class Template
     
     function __construct()
     {
-        $this->setTemplate('default');
+//        $this->setTemplate('default');
         
         $this->instance = get_instance();
     }
@@ -30,7 +30,7 @@ class Template
     public function includeView( $file )
     {
         $path = FCPATH . '/application/views/'. $file . '.php';
-
+        
         return $this->renderFile( $path );
     }
     

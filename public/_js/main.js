@@ -38,7 +38,7 @@ var Aruna = {
         jQuery("img.lazy").lazyload({
             effect : "fadeIn"
         });
-        $('#myCombobox').selectBoxIt({
+        $('.myCombobox').selectBoxIt({
             autoWidth: false
         });
         $('#categoryCombobox').selectBoxIt({
@@ -230,7 +230,7 @@ var Aruna = {
             .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
         jQuery('.modal-top-menu button').click(Aruna.switchWindow);
-        jQuery('#myCombobox').on("change", Aruna.switchWindowPost);
+        jQuery('.myCombobox').on("change", Aruna.switchWindowPost);
         jQuery(window).on("scroll", function() {
             jQuery('.main-post').not('.post-page').each(Aruna.stickyButtons);
         });

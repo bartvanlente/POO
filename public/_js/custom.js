@@ -42,16 +42,16 @@ var $upload = {
     },
             
     select : function() {
-        $('#select_file_category').change(function(){			
+        $('.myCombobox').change(function(){			
             if( $(this).find("option:selected").html() == 'album' )
             {
-                $('.album').css({'display': 'block'});
-                $('.image').css({'display': 'none'});
+                $('.image').find('span').text( 'Album uploaden' );
+                $('.image').find('input').attr('multiple', 'true');
             }
             else
             {
-                $('.album').css({'display': 'none'}); 
-                $('.image').css({'display': 'block'});
+                $('.image').find('span').text( 'Single image upload' );
+                $('.image').find('input').removeAttr('multiple', 'true');
             }
         });   
     }

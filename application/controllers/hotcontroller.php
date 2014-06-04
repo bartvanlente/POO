@@ -9,7 +9,7 @@ class hotcontroller extends Controller {
     
     public function index() {
         
-        $images = hotmodel::gethottest();
+        $images = imagemodel::gethottest();
         
         foreach($images as $image) 
         {

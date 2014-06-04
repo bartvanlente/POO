@@ -15,7 +15,7 @@
 background:url('../_img/icons/timeline-bullet.png') repeat-y; padding-left:25px; margin-left:18px;
 }
 
-ul#steps { float:left; width:854px; height:60px; margin:20px 145px 30px; background:url('../_img/bgs/steps.jpg') no-repeat; padding-left:2px; }
+ul#steps { float:left; width:854px; height:24px; margin:20px 145px 0px; background:url('../_img/bgs/steps.jpg') no-repeat; padding-left:2px; }
 
 ul#steps li { float:left; width:214px; list-style:none; margin-left:-1px; }
 
@@ -24,3 +24,22 @@ ul#steps li a { height:116px; float:left; width:214px; text-decoration:none; }
 ul#steps li a.active { background:url('../_img/bgs/step_active.png') no-repeat; }
 
 ul#steps li a span { color:#000; font-size:12px; margin:33px 0 0 5px; width:208px; float:left; }
+
+.uploadform { float:left; width:854px; margin:20px 145px 0px; padding-left:2px; }
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}

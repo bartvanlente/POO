@@ -33,15 +33,6 @@ class logincontroller extends Controller
         usermodel::logout();
     }
     
-    public function register()
-    {
-        
-    }
-    
-    public function forgot_password()
-    {
-        echo 4;
-    }
 }
 
 ?>
